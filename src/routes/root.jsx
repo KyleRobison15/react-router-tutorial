@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 export default function Root() {
   return (
     <>
@@ -30,7 +32,10 @@ export default function Root() {
           </ul>
         </nav>
       </div>
-      <div id="detail"></div>
+      {/* This detail div is the container in our root layout where the child routes will render via the <Outlet /> component */}
+      <div id="detail">
+        <Outlet />
+      </div>
     </>
   );
 }
