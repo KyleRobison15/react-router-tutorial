@@ -2,12 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Root from "./routes/root";
+import ErrorPage from "./error-page";
 
 // Create Browser Router
+// Root is essentially our splash page.
+// Anytime your app throws an error while rendering, loading data, or performing data mutations, React Router will catch it and render the error element.
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello World!</div>,
+    element: <Root />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
